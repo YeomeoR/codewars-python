@@ -24,7 +24,7 @@
 
 
 def sort_vowels(s):
-    if s == None or s == "" or s == int:
+    if s == None or s == "":
         raise Exception("The arguments 'string' is None or empty")
     vowels = ['A','E','I','O','U','a','e','i','o','u']
     s_listed = list(s)
@@ -32,9 +32,11 @@ def sort_vowels(s):
     for character in s:
         if character in vowels:
             stringed += "|" + character + "\n"
-        else:
+        elif character in s != -1:
             stringed += character + "|\n"
-    stringed = stringed[:-1]
+        else:
+            stringed += character
+    # stringed = stringed[:-1]
     return(stringed)
     
          
@@ -45,3 +47,4 @@ print(sort_vowels('Codewars'))
 # , 'C|\n|o\nd|\n|e\nw|\n|a\nr|\ns|')
 print(sort_vowels('Rnd Te5T'))
     #   , 'R|\nn|\nd|\n |\nT|\n|e\n5|\nT|') 
+print(sort_vowels('This is as far as I\'m going with this kata.')) # because there is something strange about the ending in each of the test cases. 

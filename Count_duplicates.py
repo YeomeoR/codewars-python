@@ -11,18 +11,13 @@
 
 
 def duplicate_count(text):
-    lc = text.lower()
-    # text to lower -> list, counting it's length and save into a variable
-    text_list = list(lc)
-    list_length = len(text_list)
-    # text -> set, counting it's length and save into a variable
-    text_set = set(lc)
-    set_length = len(text_set)
+    text = text.lower()
+    seen = set()
+    seen_add = seen.add
+    seen_twice = set(x for x in text if x in seen or seen_add(x))
+    return len(list(seen_twice))
     
-    # return list - set
-    print(list_length)
-    print(set_length)
-    print(list_length - set_length)
+   
 
 
 print(duplicate_count(""), 0)

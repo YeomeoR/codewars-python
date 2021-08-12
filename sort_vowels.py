@@ -21,21 +21,27 @@
 # Return every character in its original case
 # Each line is seperated with \n
 # Invalid input ( undefined / null / integer ) should return an empty string
-# import re
+
 
 def sort_vowels(s):
-    
+    if s == None or s == "" or s == int:
+        raise Exception("The arguments 'string' is None or empty")
     vowels = ['A','E','I','O','U','a','e','i','o','u']
-    as_list = list(s.split())
-    for ele in as_list: 
-        for ele in vowels:        
-            return ele + '|\n'
+    s_listed = list(s)
+    stringed = ''
+    for character in s:
+        if character in vowels:
+            stringed += "|" + character + "\n"
         else:
-            return 'This did not work'
+            stringed += character + "|\n"
+    stringed = stringed[:-1]
+    return(stringed)
     
          
     
     
 
 print(sort_vowels('Codewars'))
-# print(sort_vowels('Rnd Te5T'), 'R|\nn|\nd|\n |\nT|\n|e\n5|\nT|') 'C|\n|o\nd|\n|e\nw|\n|a\nr|\ns|'
+# , 'C|\n|o\nd|\n|e\nw|\n|a\nr|\ns|')
+print(sort_vowels('Rnd Te5T'))
+    #   , 'R|\nn|\nd|\n |\nT|\n|e\n5|\nT|') 

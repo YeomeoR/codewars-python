@@ -7,6 +7,11 @@
 
 def remove_duplicate_words(s):
     word = s.split(' ')
+    seen = set()
+    
+    # seen_add = seen.add
+    # if word already exists in seen, remove it
+    # return 
     print(word)
     
     
